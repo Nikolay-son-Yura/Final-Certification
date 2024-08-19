@@ -33,5 +33,5 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name = "userId",referencedColumnName = "id")
-    private User owner;
+    private User user;
 }

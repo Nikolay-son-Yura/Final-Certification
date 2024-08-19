@@ -1,2 +1,23 @@
+spring:
+  mail:
+    host: smtp.mail.ru
+    username: nikola_doma@mail.ru
+    port: '587'
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    password: example
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 'password'
+    url: jdbc:postgresql://localhost:5432/timesheets_db
 server:
-  port: 8085
+  port: '8085'

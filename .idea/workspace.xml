@@ -4,20 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56148104-9710-4693-b919-514691be81d5" name="Changes" comment="" />
+    <list default="true" id="56148104-9710-4693-b919-514691be81d5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/controllers/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/dto/TaskDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/model/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/repositories/TaskRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/service/TaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/utils/MapperUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/model/ConfirmationToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/repository/ConfirmationTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/service/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/gb/AppTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2keJHetELBEr3i5edapu5qwoJlk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,8 +63,12 @@
   "keyToString": {
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.ide.FileNotInSourceRootChecker.no.check": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

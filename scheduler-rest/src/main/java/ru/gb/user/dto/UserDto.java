@@ -1,4 +1,4 @@
-package ru.gb.model.dto;
+package ru.gb.user.dto;
 
 import lombok.Data;
 
