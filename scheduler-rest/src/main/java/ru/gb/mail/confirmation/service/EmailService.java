@@ -1,4 +1,4 @@
-package ru.gb.user.service;
+package ru.gb.mail.confirmation.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

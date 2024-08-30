@@ -7,8 +7,11 @@ import ru.gb.user.model.User;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User,Long> {
-    User findByUserEmailIgnoreCase(String email);
-    Boolean existsByUserEmail(String email);
+public interface UserRepository extends JpaRepository<User, Long> {
+
     Optional<User> findById(Long id);
+
+    User findByUserEmail(String email);
+
 }
+

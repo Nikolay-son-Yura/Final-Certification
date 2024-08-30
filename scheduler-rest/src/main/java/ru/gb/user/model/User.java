@@ -1,11 +1,13 @@
 package ru.gb.user.model;
 
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.gb.task.model.Task;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Data
@@ -15,8 +17,8 @@ import java.util.List;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "userName")
     private String userName;
@@ -24,11 +26,17 @@ public class User {
     @Column(name = "email")
     private String userEmail;
 
+
     @Column(name = "password")
     private String userPassword;
 
+    @Column(name = "enabled")
+    private boolean isEnabled;
+
+    @Column(name = "roleId")
+    private Long roleId;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-//    @ApiModelProperty(hidden = true)
     private List<Task> tasks;
 
 //    @Column(name = "phone")
@@ -39,5 +47,12 @@ public class User {
         this.userEmail = email;
         this.userPassword = password;
     }
+
+    public User(String userEmail, String userPassword, boolean isEnabled) {
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+        this.isEnabled = isEnabled;
+    }
+
 
 }

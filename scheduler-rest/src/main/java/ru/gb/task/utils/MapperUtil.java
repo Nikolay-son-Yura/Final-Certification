@@ -2,12 +2,15 @@ package ru.gb.task.utils;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.gb.user.model.User;
 import ru.gb.user.dto.UserDto;
 import ru.gb.task.dto.TaskDto;
 import ru.gb.task.model.Task;
 
+@Component
 public class MapperUtil {
+
     private final ModelMapper modelMapper;
 
     @Autowired
@@ -15,7 +18,7 @@ public class MapperUtil {
         this.modelMapper = modelMapper;
     }
 
-    public UserDto convertTOUserDto(User user){
+    public UserDto convertToUserDto(User user){
         return modelMapper.map(user, UserDto.class);
     }
 

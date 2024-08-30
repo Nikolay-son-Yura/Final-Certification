@@ -1,14 +1,17 @@
-package ru.gb.user.model;
+package ru.gb.mail.confirmation.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.gb.user.model.User;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
 @Data
+@Entity
+@Table(name="confirmationToken")
 @NoArgsConstructor
 public class ConfirmationToken {
 
@@ -34,7 +37,9 @@ public class ConfirmationToken {
         createdDate = new Date();
         confirmationToken = UUID.randomUUID().toString();
     }
-
+    public User getUserEntity() {
+        return user;
+    }
 
 
 }

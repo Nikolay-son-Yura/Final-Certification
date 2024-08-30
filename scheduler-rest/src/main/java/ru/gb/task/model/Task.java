@@ -32,6 +32,8 @@ public class Task {
     private LocalDateTime dateCreation;
 
     @ManyToOne
-    @JoinColumn(name = "userId",referencedColumnName = "id")
-    private User user;
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    private User owner;
+
+
 }
