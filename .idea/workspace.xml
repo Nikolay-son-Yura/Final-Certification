@@ -4,37 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56148104-9710-4693-b919-514691be81d5" name="Changes" comment="commit1">
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/TaskApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/confirmation/repository/UserEmail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/notification/service/RegistrationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/security/MyCustomUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/security/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/model/Roles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/model/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/repository/UserRoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/resources/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="56148104-9710-4693-b919-514691be81d5" name="Changes" comment="commit2">
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/security/TaskTrackerUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/dto/UserRegistrationDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/service/RegistrationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/service/UserDetailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/TaskApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/TaskApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/confirmation/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/confirmation/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/notification/service/RegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/notification/service/RegistrationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/security/MyCustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/security/MyCustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/security/SecurityConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/controllers/TaskController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/dto/TaskDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/dto/TaskDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/repositories/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/repositories/TaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/utils/MapperUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/utils/MapperUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/task/utils/MapperUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/utils/MapperUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/model/ConfirmationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/confirmation/model/ConfirmationToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/repository/ConfirmationTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/confirmation/repository/ConfirmationTokenRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/confirmation/service/EmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/mail/confirmation/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scheduler-rest/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduler-rest/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,23 +204,20 @@
       <option name="project" value="LOCAL" />
       <updated>1724086867632</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit2">
+      <option name="closed" value="true" />
+      <created>1725032131472</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725032131473</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit1" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/scheduler-rest/src/main/java/ru/gb/user/controller/UserController.java</url>
-          <line>17</line>
-          <properties field="userService" class="ru.gb.user.controller.UserController" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="commit2" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit2" />
   </component>
 </project>

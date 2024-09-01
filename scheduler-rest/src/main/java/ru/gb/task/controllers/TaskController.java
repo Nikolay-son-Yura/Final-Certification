@@ -6,21 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.gb.security.TaskTrackerUserDetails;
 import ru.gb.task.dto.TaskDto;
 import ru.gb.task.service.TaskService;
-import ru.gb.task.utils.MapperUtil;
+import ru.gb.utils.MapperUtil;
 import ru.gb.user.dto.UserDto;
-import ru.gb.user.model.User;
 import ru.gb.user.service.UserService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Tag(name = "Планировщик задач", description = "Точка входа для работы с задачами пользователя")
-//@RequestMapping("tasks")
 @RestController
 public class TaskController {
-
 
     private final TaskService taskService;
     private final UserService userService;
@@ -34,33 +32,32 @@ public class TaskController {
     }
 
 
-    @Operation(summary = "получение списка задач пользователя")
-    @GetMapping("/task")
-    public ResponseEntity<List<TaskDto>> getTasks(@RequestBody User user) {
-        return ResponseEntity.ok(taskService.findByOwnerId(user.getId()).stream().map(mapperUtil::convertToTaskDto).collect(Collectors.toList()));
+    @Operation(summary = "Поиск списка задач пользователя")
+    @GetMapping("/tasks")
+    public List<TaskDto> getTasks( TaskTrackerUserDetails taskTrackerUserDetails) {
+        return taskService.findByOwnerId(taskTrackerUserDetails.getUser().getId()).stream()
+                .map(mapperUtil::convertToTaskDto).collect(Collectors.toList());
     }
-//    public ResponseEntity<List<TaskDto>> getAllTasks(){
-//        return ResponseEntity.ok(mapperUtil.convertToTaskDto(taskService.findAll()));
-//    }
+
 
     @Operation(summary = "Поиск пользователя")
     @GetMapping("/user")
-    public UserDto getUser(User user) {
-        return mapperUtil.convertToUserDto(user);
+    public UserDto getUser(TaskTrackerUserDetails taskTrackerUserDetails) {
+        return mapperUtil.convertToUserDto(taskTrackerUserDetails.getUser());
     }
 
     @Operation(summary = "Создание задачи")
     @PostMapping(path = "/tasks")
-    public ResponseEntity<HttpStatus> addTask(@RequestBody User user, @ModelAttribute TaskDto taskDto) {
-        taskService.created(mapperUtil.convertToTask(taskDto), userService.findById(user.getId()).orElseThrow());
+    public ResponseEntity<HttpStatus> addTask( TaskTrackerUserDetails taskTrackerUserDetails, @ModelAttribute TaskDto taskDto) {
+        taskService.created(mapperUtil.convertToTask(taskDto), userService.findById(taskTrackerUserDetails.getUser().getId()).orElseThrow());
         return ResponseEntity.ok(HttpStatus.CREATED);
     }
 
 
     @Operation(summary = "Обновление задачи")
     @PatchMapping(path = "/tasks")
-    public ResponseEntity<HttpStatus> updateTask(User user, TaskDto taskDto) {
-        taskService.update(mapperUtil.convertToTask(taskDto), userService.findById(user.getId()).orElseThrow());
+    public ResponseEntity<HttpStatus> updateTask( TaskTrackerUserDetails taskTrackerUserDetails, @ModelAttribute TaskDto taskDto) {
+        taskService.update(mapperUtil.convertToTask(taskDto), userService.findById(taskTrackerUserDetails.getUser().getId()).orElseThrow());
         return ResponseEntity.ok(HttpStatus.OK);
 
     }

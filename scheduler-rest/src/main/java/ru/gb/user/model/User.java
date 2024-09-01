@@ -2,19 +2,21 @@ package ru.gb.user.model;
 
 
 import io.swagger.annotations.ApiModelProperty;
+//import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.gb.task.model.Task;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +25,11 @@ public class User {
     @Column(name = "userName")
     private String userName;
 
+//    @NotEmpty(message = "Электронная почта не должна быть пустой.")
     @Column(name = "email")
     private String userEmail;
 
-
+//    @NotEmpty(message = "Пароль не должен быть пустым")
     @Column(name = "password")
     private String userPassword;
 

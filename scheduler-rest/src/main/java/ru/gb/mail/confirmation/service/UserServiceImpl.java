@@ -22,7 +22,7 @@ public class UserServiceImpl {
     EmailService emailService;
 
 
-    public ResponseEntity<?> saveUser(User user) {
+    public ResponseEntity<?> saveUserEmail(User user) {
         if (userEmail.existsByUserEmail(user.getUserEmail())) {
             return ResponseEntity.badRequest().body("Ошибка: адрес электронной почты уже используется!");
         }
@@ -34,7 +34,7 @@ public class UserServiceImpl {
         confirmationTokenRepository.save(confirmationToken);
 
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setFrom("nikola_doma@mail.ru");
+//        mailMessage.setFrom("nikola_doma@mail.ru");
         mailMessage.setTo(user.getUserEmail());
         mailMessage.setSubject("Завершить регистрацию!");
         mailMessage.setText("Чтобы подтвердить свою учетную запись, скопируйте ссылку : "
@@ -51,10 +51,12 @@ public class UserServiceImpl {
 
         if (token != null) {
             User user = userEmail.findByUserEmailIgnoreCase(token.getUserEntity().getUserEmail());
-//            user.setEnabled(true);
+            user.setEnabled(true);
             userEmail.save(user);
             return ResponseEntity.ok("Электронная почта успешно подтверждена!");
         }
         return ResponseEntity.badRequest().body("Ошибка: не удалось подтвердить адрес электронной почты.");
     }
+
+
 }

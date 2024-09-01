@@ -24,7 +24,7 @@ public class TaskService {
     }
 
     public Task findById(Long id) {
-        return taskRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Task does not exist"));
+        return taskRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Задача не существует"));
     }
     public List<Task> findAll(){
         return taskRepository.findAll();

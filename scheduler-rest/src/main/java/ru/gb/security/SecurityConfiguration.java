@@ -1,56 +1,99 @@
-package ru.gb.security;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
-import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.config.core.GrantedAuthorityDefaults;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
-import ru.gb.user.model.Roles;
-
-@Configuration
-@EnableWebSecurity
-public class SecurityConfiguration  {
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests()
-//                .antMatchers("/register").permitAll()
-//                .antMatchers("/confirm").permitAll();
-//    }
-    @Bean
-    GrantedAuthorityDefaults grantedAuthorityDefaults() {
-        return new GrantedAuthorityDefaults("");
-    }
-
-
-    @Bean
-    SecurityFilterChain noSecurity(HttpSecurity httpSecurity) throws Exception {
-        return httpSecurity
-                .csrf(AbstractHttpConfigurer::disable)
-                .cors(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(it -> it.anyRequest().permitAll())
-                .build();
-    }
+//package ru.gb.security;
+//
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.security.authentication.AuthenticationManager;
+//import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+//import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+//import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.web.AuthenticationEntryPoint;
+//import org.springframework.security.web.SecurityFilterChain;
+//import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+//import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+//import org.springframework.web.cors.CorsConfiguration;
+//import org.springframework.web.cors.CorsConfigurationSource;
+//import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+//import ru.gb.user.service.UserDetailService;
+//
+//import java.util.Arrays;
+//
+//@EnableWebSecurity
+//public class SecurityConfiguration  {
+//
 //    @Bean
-//    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 //        return http
-//                .authorizeHttpRequests(requests -> requests
-//                        .requestMatchers("/home/timesheets/**").hasRole(Roles.USER.getName())
-//                        .requestMatchers("/home/projects/**").hasRole(Roles.ADMIN.getName())
-//                        .requestMatchers("/timesheets/**").hasRole(Roles.REST.getName())
-//                        .requestMatchers("/projects/**").hasRole(Roles.REST.getName())
-//                        .requestMatchers("/employees/**").hasRole(Roles.REST.getName())
-//                )
-//                .formLogin(Customizer.withDefaults())
+//                .csrf(AbstractHttpConfigurer::disable)
+//                .cors(AbstractHttpConfigurer::disable)
+//                .authorizeHttpRequests(it -> it.anyRequest().permitAll())
 //                .build();
 //    }
-    @Bean
-    PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-}
+////        http.csrf(AbstractHttpConfigurer::disable)
+////                .cors(AbstractHttpConfigurer::disable)
+////                .authorizeHttpRequests(request-> request
+////                .requestMatchers("/user", "/css/**", "/img/**", "/error", "/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
+////                .anyRequest().hasAnyRole("USER", "ADMIN"))
+////                .and()
+////                .formLogin()
+////                .loginProcessingUrl("/session")
+////                .successHandler(successHandler())
+////                .failureHandler(failureHandler())
+////                .and()
+////                .exceptionHandling()
+////                .authenticationEntryPoint(authenticationEntryPoint())
+////                .and()
+////                .logout()
+////                .logoutUrl("/logout")
+////                .logoutSuccessUrl("/session")
+////                .and()
+////                .httpBasic();
+////
+////        return http.build();
+//
+//    @Bean
+//    PasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
+//    @Bean
+//    public AuthenticationManager authenticationManager(HttpSecurity http, BCryptPasswordEncoder bCryptPasswordEncoder, UserDetailService userDetailService)
+//            throws Exception {
+//        return http.getSharedObject(AuthenticationManagerBuilder.class)
+//                .userDetailsService(userDetailService)
+//                .passwordEncoder(bCryptPasswordEncoder)
+//                .and()
+//                .build();
+//    }
+//
+////    @Bean
+////    CorsConfigurationSource corsConfigurationSource() {
+////        CorsConfiguration configuration = new CorsConfiguration();
+//////        configuration.setAllowedOrigins(Arrays.asList("http://localhost:63342/"));
+////        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PATCH", "DELETE"));
+////        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+////        source.registerCorsConfiguration("/**", configuration);
+////        return source;
+////    }
+//
+//    private AuthenticationSuccessHandler successHandler() {
+//        return (httpServletRequest, httpServletResponse, authentication) -> {
+//            httpServletResponse.getWriter().append("OK");
+//            httpServletResponse.setStatus(200);
+//        };
+//    }
+//
+//    private AuthenticationFailureHandler failureHandler() {
+//        return (httpServletRequest, httpServletResponse, e) -> {
+//            httpServletResponse.getWriter().append("Authentication failure");
+//            httpServletResponse.setStatus(401);
+//        };
+//    }
+//
+//    private AuthenticationEntryPoint authenticationEntryPoint() {
+//        return (httpServletRequest, httpServletResponse, e) -> {
+//            httpServletResponse.getWriter().append("Not authenticated");
+//            httpServletResponse.setStatus(401);
+//        };
+//    }
+//}

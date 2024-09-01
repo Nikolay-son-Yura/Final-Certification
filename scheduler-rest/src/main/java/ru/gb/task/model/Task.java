@@ -3,6 +3,7 @@ package ru.gb.task.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import ru.gb.user.model.User;
 
@@ -10,13 +11,13 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "tasks")
+@Table(name = "task")
 @NoArgsConstructor
 public class Task {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(name = "header")
@@ -35,5 +36,14 @@ public class Task {
     @JoinColumn(name = "user_id",referencedColumnName = "id")
     private User owner;
 
-
+//    public Task(String header, String description, User owner) {
+//        this.header = header;
+//        this.description = description;
+//        this.owner = owner;
+//    }
+//
+//    public Task(String header, String description) {
+//        this.header = header;
+//        this.description = description;
+//    }
 }
